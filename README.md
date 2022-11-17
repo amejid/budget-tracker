@@ -1,6 +1,7 @@
 # Budget Tracker
 
 > Budget Tracker is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+
 ## Built With
 
 - Ruby on Rails
@@ -27,6 +28,17 @@ To get a local copy up and running follow these simple example steps.
     - install necessary gems `bundle install`
     - install necessary javascript packages `npm install`
     - run the development server `rails server`
+
+### Run tests
+
+To run tests, run the following command:
+
+- Unit tests
+  - `rspec spec/models`
+
+
+- Integration tests
+  - `rspec spec/integration`
 
 ## Author
 
