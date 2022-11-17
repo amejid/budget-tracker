@@ -1,9 +1,11 @@
 class ExpensesController < ApplicationController
   def new
-    @expense = Expense.new
     @category = Category.find(params[:category_id])
-    if @category.author != current_user
-      flash[:alert] = "You can only create expenses from your categories"
+
+    if @category.author == current_user
+      @expense = Expense.new
+    else
+      flash[:alert] = 'You can only create expenses from your categories'
       redirect_to categories_path
     end
   end
@@ -11,7 +13,7 @@ class ExpensesController < ApplicationController
   def create
     @category = Category.find(params[:category_id])
     if @category.author != current_user
-      flash[:alert] = "You can only create expenses from your categories"
+      flash[:alert] = 'You can only create expenses from your categories'
       redirect_to categories_path
     end
     if expense_params[:category_ids].length == 1
