@@ -87,7 +87,7 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: budget_tracker_production
   username: budget_tracker
-  url: <%= ENV["MY_APP_DATABASE_URL"] %>
   password: <%= ENV["BUDGET_TRACKER_DATABASE_PASSWORD"] %>
